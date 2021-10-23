@@ -1,0 +1,35 @@
+{
+    "extends": [
+      ":dependencyDashboard",
+      ":semanticPrefixFixDepsChoreOthers",
+      ":ignoreModulesAndTests",
+      ":autodetectPinVersions",
+      ":prConcurrentLimit20",
+      "group:monorepos",
+      "group:recommended",
+      "workarounds:all",
+      "npm:unpublishSafe"
+    ],
+    "prHourlyLimit": 0,
+    "assignees": [ "DeadClap" ],
+    "updateLockFiles": false,
+    "labels": ["Dependencies"],
+    "packageRules": [
+     {
+       "matchUpdateTypes": ["major"],
+        "labels": ["DEPS-MAJOR"]
+      },
+      {
+        "matchUpdateTypes": ["minor"],
+       "labels": [ "DEPS-MINOR"]
+     },
+     {
+       "matchUpdateTypes": ["patch"],
+       "labels": [ "DEPS-PATCH"]
+     },
+     {
+       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true
+      }
+    ]
+  }
