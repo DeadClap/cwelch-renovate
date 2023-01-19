@@ -30,7 +30,7 @@
      },
      {
        "matchUpdateTypes": ["pin", "digest"],
-       "labels": [ "Dependencies" ]
+       "labels": [ "Dependencies" ],
         "automerge": true
         
       }
