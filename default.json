@@ -13,23 +13,26 @@
     "prHourlyLimit": 0,
     "assignees": [ "DeadClap" ],
     "updateLockFiles": false,
-    "labels": ["Dependencies"],
     "packageRules": [
      {
        "matchUpdateTypes": ["major"],
-        "labels": ["Dependencies", "DEPS-MAJOR"]
+        "labels": ["Dependencies", "MAJOR"]
       },
       {
         "matchUpdateTypes": ["minor"],
-       "labels": [ "Dependencies", "DEPS-MINOR"]
+       "labels": [ "Dependencies", "MINOR"],
+       "automerge": true
      },
      {
        "matchUpdateTypes": ["patch"],
-       "labels": [ "Dependencies", "DEPS-PATCH"]
+       "labels": [ "Dependencies", "PATCH"],
+       "automerge": true
      },
      {
-       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+       "matchUpdateTypes": ["pin", "digest"],
+       "labels": [ "Dependencies" ]
         "automerge": true
+        
       }
     ]
   }
