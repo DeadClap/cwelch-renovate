@@ -2,37 +2,10 @@
     "extends": [
       ":dependencyDashboard",
       ":semanticPrefixFixDepsChoreOthers",
-      ":ignoreModulesAndTests",
+      ":enableVulnerabilityAlerts",
       ":autodetectPinVersions",
-      ":prConcurrentLimit20",
-      "group:monorepos",
-      "group:recommended",
-      "workarounds:all",
-      "npm:unpublishSafe"
-    ],
-    "prHourlyLimit": 0,
-    "assignees": [ "DeadClap" ],
-    "updateLockFiles": false,
-    "packageRules": [
-     {
-       "matchUpdateTypes": ["major"],
-        "labels": ["Dependencies", "MAJOR"]
-      },
-      {
-        "matchUpdateTypes": ["minor"],
-       "labels": [ "Dependencies", "MINOR"],
-       "automerge": true
-     },
-     {
-       "matchUpdateTypes": ["patch"],
-       "labels": [ "Dependencies", "PATCH"],
-       "automerge": true
-     },
-     {
-       "matchUpdateTypes": ["pin", "digest"],
-       "labels": [ "Dependencies" ],
-        "automerge": true
-        
-      }
+      ":disableRateLimiting",
+      ":ignoreModulesAndTests",
+      ":maintainLockFilesMonthly",
     ]
   }
