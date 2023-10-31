@@ -1,12 +1,9 @@
 {
+    "configMigration": true,
     "extends": [
-      ":dependencyDashboard",
-      ":semanticPrefixFixDepsChoreOthers",
-      ":enableVulnerabilityAlerts",
-      ":autodetectPinVersions",
-      ":disableRateLimiting",
-      ":ignoreModulesAndTests",
-      ":maintainLockFilesMonthly",
-      ":automergeLinters"
+        "config:recommended",
+        "docker:pinDigests",
+        "helpers:pinGitHubActionDigests",
+        ":pinDevDependencies"
     ]
-  }
+}
